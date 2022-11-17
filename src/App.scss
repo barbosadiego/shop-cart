@@ -2,9 +2,6 @@
 
 * {
   box-sizing: border-box;
-}
-
-body {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -12,9 +9,54 @@ a {
   text-decoration: none;
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+p,
 ul,
 li {
   margin: 0;
   padding: 0;
+}
+
+li {
   list-style: none;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+input[type='text'] {
+  width: 100%;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  height: f.rem(36);
+  outline: none;
+  padding: 9px;
+  transition: 0.3s;
+  font-size: 1rem;
+
+  &:focus {
+    box-shadow: 0 0 0 3px #d4d4d4;
+  }
+}
+
+.svg {
+  filter: invert(42%) sepia(2%) saturate(833%) hue-rotate(175deg)
+    brightness(95%) contrast(86%);
 }
