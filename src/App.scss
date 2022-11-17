@@ -10,19 +10,46 @@ a {
 }
 
 body,
+ul,
 h1,
 h2,
 h3,
-h4,
-p,
-ul,
 li {
   margin: 0;
   padding: 0;
 }
 
+h1 {
+  font-weight: 700;
+  font-size: f.rem(24);
+  line-height: f.rem(28);
+}
+
+h2 {
+  font-weight: 700;
+  font-size: f.rem(18);
+  line-height: f.rem(22);
+}
+
+p {
+  font-weight: 400;
+  font-size: f.rem(16);
+  line-height: f.rem(19);
+}
+
 li {
   list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .container {
@@ -39,6 +66,7 @@ li {
 
 main {
   flex: 1;
+  margin-bottom: 1.7rem;
 }
 
 input[type='text'] {
