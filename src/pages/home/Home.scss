@@ -1,0 +1,58 @@
+@use '../../Functios.scss' as f;
+
+.home {
+  padding: 0px 33px;
+
+  &__user {
+    padding-bottom: 1rem;
+  }
+
+  &__main_product {
+    .greeting {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 27px;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      position: relative;
+
+      .img img {
+        height: 167px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+      }
+
+      .fav {
+        position: absolute;
+        top: 14px;
+        right: 23px;
+        border: 1px solid #d4d4d4;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__grid {
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem 0;
+    }
+
+    .grid-items {
+      display: grid;
+      align-items: stretch;
+      justify-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+}
