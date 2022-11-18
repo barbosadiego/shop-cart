@@ -1,0 +1,36 @@
+@use '../../Functios.scss' as f;
+
+.cart-page {
+  &__items {
+    padding-inline: 33px;
+
+    .item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .title {
+          font-size: 1rem;
+          font-weight: normal;
+          margin: 0;
+        }
+
+        .price {
+          font-weight: bold;
+        }
+
+        .qty {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
