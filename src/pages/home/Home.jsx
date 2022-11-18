@@ -28,27 +28,33 @@ const Home = () => {
           <h1>Hello User</h1>
           <p>we have some reccommendations for you</p>
         </div>
+
         <div className="home__main_product">
           <div className="greeting">
             <h2>Just for you</h2>
             <Link to="/">See all</Link>
           </div>
           {products.length && (
-            <div className="item">
-              <div className="img">
-                <img src={products[0].image} alt={products[0].title} />
+            <>
+              <div className="item">
+                <Link to={`product/${products[0].id}`}>
+                  <div className="img">
+                    <img src={products[0].image} alt={products[0].title} />
+                  </div>
+                </Link>
+                <h4>{products[0].title}</h4>
+                <span>
+                  <strong>${products[0].price}</strong>
+                </span>
+                <p>{products[0].description}</p>
+                <div className="fav">
+                  <img src={love} alt="favorite item" width={22} height={22} />
+                </div>
               </div>
-              <h4>{products[0].title}</h4>
-              <span>
-                <strong>${products[0].price}</strong>
-              </span>
-              <p>{products[0].description}</p>
-              <div className="fav">
-                <img src={love} alt="favorite item" width={22} height={22} />
-              </div>
-            </div>
+            </>
           )}
         </div>
+
         <div className="home__grid">
           <div className="info">
             <h3>Details</h3>
@@ -56,7 +62,9 @@ const Home = () => {
           </div>
           <div className="grid-items">
             {productsGrid.map((item, index) => (
-              <Card item={item} key={index} />
+              <Link to={`/product/${item.id}`} key={index}>
+                <Card item={item} />
+              </Link>
             ))}
           </div>
         </div>
