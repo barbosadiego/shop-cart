@@ -1,0 +1,49 @@
+@use '../../Functios.scss' as f;
+
+.table-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #525252;
+
+  .data {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem;
+    padding-left: 1rem;
+    align-items: center;
+    @media screen and (max-width: 500px) {
+      grid-template-columns: 1fr;
+    }
+    .img {
+      justify-self: center;
+      img {
+        height: 120px;
+        width: 220px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .qty {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    border: 1px solid #525252;
+    border-radius: 5px;
+    @media screen and (max-width: 767px) {
+      width: 50%;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: f.rem(20);
+    }
+  }
+
+  .info {
+    p {
+      font-size: f.rem(13);
+      line-height: 1.2;
+    }
+  }
+}
