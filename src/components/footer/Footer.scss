@@ -1,25 +1,4 @@
-@use '../../Functios.scss' as f;
-
 .footer {
-  border-top: 1px solid #d4d4d4;
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-    padding: 9px 0;
-
-    button {
-      svg path {
-        opacity: 0.4;
-        transition: 0.3s;
-      }
-      &:hover,
-      &.active {
-        svg path {
-          opacity: 1;
-        }
-      }
-    }
-  }
+  text-align: center;
+  color: #666;
 }
