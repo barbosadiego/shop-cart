@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import plus from '../../assets/plus.svg';
 import deleteIcon from '../../assets/delete.svg';
 
@@ -33,6 +33,9 @@ const CartPage = () => {
               </div>
             );
           })}
+        <div className="total">
+          <p>Cart total: </p>
+        </div>
       </div>
     </section>
   );
