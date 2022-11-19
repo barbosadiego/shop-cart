@@ -1,6 +1,10 @@
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 import './Card.scss';
 
 const Card = ({ item }) => {
+  const { addToCart } = useContext(CartContext);
+
   function formatPrice(price) {
     return price.toLocaleString('en-US', {
       style: 'currency',
@@ -15,7 +19,9 @@ const Card = ({ item }) => {
       <p>
         <strong>{formatPrice(item.price)}</strong>
       </p>
-      <button className="btn">Add to Cart</button>
+      <button className="btn" onClick={() => addToCart(item)}>
+        Add to Cart
+      </button>
     </div>
   );
 };
