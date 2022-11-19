@@ -1,7 +1,6 @@
 @use '../../Functios.scss' as f;
 
 .header {
-  padding: 1rem;
   background-color: #333;
 
   .logo {
@@ -10,7 +9,7 @@
     font-weight: bold;
   }
 
-  & > div {
+  ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
