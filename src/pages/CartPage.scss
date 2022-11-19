@@ -1,0 +1,55 @@
+@use '../Functios.scss' as f;
+
+.cart-page {
+  h1 {
+    font-weight: 300;
+    text-align: center;
+    margin: 1rem 0 2rem;
+  }
+
+  &__table {
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr repeat(3, 100px);
+      justify-items: center;
+      align-items: center;
+      @media screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .t-head {
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+
+      p {
+        text-transform: uppercase;
+        &:first-of-type {
+          justify-self: start;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .subtotal {
+      padding-top: 1rem;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+
+      & > div {
+        width: 30%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .total-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
