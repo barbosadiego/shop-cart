@@ -27,6 +27,19 @@ export const CartProvider = ({ children }) => {
     setCart(tempCart);
   }
 
+  function decreaseQuantity(item) {
+    if (item.qty > 1) {
+      const tempCart = cart.map((obj) => {
+        if (obj.id === item.id) {
+          return { ...obj, qty: obj.qty - 1 };
+        } else {
+          return obj;
+        }
+      });
+      setCart(tempCart);
+    }
+  }
+
   function removeFromCart(id) {
     const tempCart = cart.filter((item) => item.id !== id);
     setCart(tempCart);
@@ -38,7 +51,14 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, clearCart, removeFromCart, increaseQuantity }}
+      value={{
+        cart,
+        addToCart,
+        clearCart,
+        removeFromCart,
+        increaseQuantity,
+        decreaseQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>
