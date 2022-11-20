@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import './Card.scss';
 
-const Card = ({ item }) => {
+const Card = ({ item, setMsg }) => {
   const { addToCart } = useContext(CartContext);
 
   function formatPrice(price) {
@@ -12,6 +12,14 @@ const Card = ({ item }) => {
     });
   }
 
+  function handleClicl(item) {
+    addToCart(item);
+    setMsg('The item has added to cart.');
+    setTimeout(() => {
+      setMsg('');
+    }, 1500);
+  }
+
   return (
     <div className="item card">
       <h3>{item.title}</h3>
@@ -19,7 +27,7 @@ const Card = ({ item }) => {
       <p>
         <strong>{formatPrice(item.price)}</strong>
       </p>
-      <button className="btn" onClick={() => addToCart(item)}>
+      <button className="btn" onClick={() => handleClicl(item)}>
         Add to Cart
       </button>
     </div>
