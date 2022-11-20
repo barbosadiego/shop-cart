@@ -1,0 +1,16 @@
+@use '../../Functios.scss' as f;
+
+.message {
+  display: none;
+  &.active {
+    display: block;
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background-color: #525252;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.9);
+  }
+}
