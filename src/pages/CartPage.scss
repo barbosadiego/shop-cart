@@ -36,10 +36,9 @@
       padding-top: 1rem;
       display: flex;
       align-items: start;
-      justify-content: space-between;
 
       & > div {
-        width: 30%;
+        margin-left: auto;
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
