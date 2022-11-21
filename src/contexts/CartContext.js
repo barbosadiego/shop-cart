@@ -14,6 +14,7 @@ export const CartProvider = ({ children }) => {
       return;
     }
     setCart(tempCart);
+    saveCartToLocalStorage(tempCart);
   }
 
   function increaseQuantity(item) {
@@ -25,6 +26,7 @@ export const CartProvider = ({ children }) => {
       }
     });
     setCart(tempCart);
+    saveCartToLocalStorage(tempCart);
   }
 
   function decreaseQuantity(item) {
@@ -37,27 +39,40 @@ export const CartProvider = ({ children }) => {
         }
       });
       setCart(tempCart);
+      saveCartToLocalStorage(tempCart);
     }
   }
 
   function removeFromCart(id) {
     const tempCart = cart.filter((item) => item.id !== id);
     setCart(tempCart);
+    saveCartToLocalStorage(tempCart);
   }
 
   function clearCart() {
     setCart([]);
+    saveCartToLocalStorage([]);
+  }
+
+  function saveCartToLocalStorage(cartData) {
+    localStorage.setItem('online-shop', JSON.stringify(cartData));
+  }
+
+  function getCartFromLocalStorage() {
+    return JSON.parse(localStorage.getItem('online-shop'));
   }
 
   return (
     <CartContext.Provider
       value={{
         cart,
+        setCart,
         addToCart,
         clearCart,
         removeFromCart,
         increaseQuantity,
         decreaseQuantity,
+        getCartFromLocalStorage,
       }}
     >
       {children}
