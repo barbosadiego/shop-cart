@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TableItem from '../components/table/TableItem';
 import { CartContext } from '../contexts/CartContext';
@@ -15,6 +15,12 @@ const CartPage = () => {
     });
     return amount;
   }
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
 
   return (
     <section className="cart-page">

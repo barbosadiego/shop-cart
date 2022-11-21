@@ -18,6 +18,12 @@ const HomePage = () => {
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
+
   return (
     <section className="home">
       <div className="container">
