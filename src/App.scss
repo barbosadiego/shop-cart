@@ -117,3 +117,17 @@ input[type='text'] {
   filter: invert(42%) sepia(2%) saturate(833%) hue-rotate(175deg)
     brightness(95%) contrast(86%);
 }
+
+@keyframes showUp {
+  to {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes showLeft {
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
