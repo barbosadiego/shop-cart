@@ -12,7 +12,7 @@ const Card = ({ item, setMsg }) => {
     });
   }
 
-  function handleClicl(item) {
+  function handleClick(item) {
     addToCart(item);
     setMsg('The item has added to cart.');
     setTimeout(() => {
@@ -27,7 +27,7 @@ const Card = ({ item, setMsg }) => {
       <p>
         <strong>{formatPrice(item.price)}</strong>
       </p>
-      <button className="btn" onClick={() => handleClicl(item)}>
+      <button className="btn" onClick={() => handleClick(item)}>
         Add to Cart
       </button>
     </div>
