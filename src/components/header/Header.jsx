@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import bag from '../../assets/shopping-bag.svg';
@@ -6,7 +6,14 @@ import { CartContext } from '../../contexts/CartContext';
 import './Header.scss';
 
 const Header = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, setCart, getCartFromLocalStorage } = useContext(CartContext);
+
+  useEffect(() => {
+    const data = getCartFromLocalStorage();
+    if (data) {
+      setCart(data);
+    }
+  }, []);
 
   return (
     <header className="header">
