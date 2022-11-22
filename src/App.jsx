@@ -10,8 +10,8 @@ export default function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/shop-cart" element={<Home />} />
+          <Route path="/shop-cart/cart" element={<Cart />} />
         </Routes>
       </main>
       <Footer />

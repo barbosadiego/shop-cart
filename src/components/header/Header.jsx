@@ -19,12 +19,12 @@ const Header = () => {
     <header className="header">
       <ul className="container">
         <li>
-          <Link to="/" className="logo">
+          <Link to="/shop-cart" className="logo">
             OnlineShop
           </Link>
         </li>
         <li className="cart-icon">
-          <Link to="/cart">
+          <Link to="/shop-cart/cart">
             <img src={bag} alt="" width={30} height={30} />
             <div className="total-items">{cart.length}</div>
           </Link>
